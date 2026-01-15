@@ -37,23 +37,23 @@ async def search_web(query: str) -> dict | None:
 async def fetch_url(url: str):
     async with httpx.AsyncClient() as client:
         response = await client.get(url, timeout=30.0)
-        #cleaned_response = clean_html_to_txt(response.text)
-        system_prompt = "You are an AI Web scraper. Only return valid text, remove and clean every other HTML component that is not required."
+        cleaned_response = clean_html_to_txt(response.text)
+        # system_prompt = "You are an AI Web scraper. Only return valid text, remove and clean every other HTML component that is not required."
                
-        # Split response into chunks of 4000 characters
-        chunk_size = 4000
-        text_chunks = [response.text[i:i+chunk_size] for i in range(0, len(response.text), chunk_size)]
+        # # Split response into chunks of 4000 characters
+        # chunk_size = 4000
+        # text_chunks = [response.text[i:i+chunk_size] for i in range(0, len(response.text), chunk_size)]
         
-        cleaned_parts = []
-        for chunk in text_chunks:
-            cleaned_chunk = get_response_from_llm(
-            user_prompt=chunk, 
-            system_prompt=system_prompt, 
-            model="openai/gpt-oss-20b"
-            )
-            cleaned_parts.append(cleaned_chunk)
+        # cleaned_parts = []
+        # for chunk in text_chunks:
+        #     cleaned_chunk = get_response_from_llm(
+        #     user_prompt=chunk, 
+        #     system_prompt=system_prompt, 
+        #     model="openai/gpt-oss-20b"
+        #     )
+        #     cleaned_parts.append(cleaned_chunk)
         
-        cleaned_response = "".join(cleaned_parts)
+        # cleaned_response = "".join(cleaned_parts)
         return cleaned_response
 
 
