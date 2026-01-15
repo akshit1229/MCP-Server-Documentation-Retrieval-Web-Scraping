@@ -4,7 +4,7 @@ This project provides a minimal, async MCP (Model Context Protocol) server that 
 
 - `fastmcp` to define and run the MCP server over stdio.
 - `httpx` for async HTTP calls.
-- `serper.dev` for Google-like search (via API).
+- `serper.dev` for Google-like search (via API). 
 - `groq` API (LLM) to clean raw HTML into readable text chunks.
 - `python-dotenv` for environment variable management.
 - `uv` as the package manager & runner (fast, lockfile-based, Python 3.11+).
@@ -163,11 +163,7 @@ uv run --active client.py
 Otherwise, uv will warn that your active `$VIRTUAL_ENV` differs from the project `.venv` but continue using the project environment.
 
 ---
-## License
 
-Add a license section here (e.g., MIT) if you intend to distribute.
-
----
 ## Troubleshooting Cheat Sheet
 
 | Symptom | Cause | Fix |

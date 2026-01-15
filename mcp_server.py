@@ -60,9 +60,9 @@ async def fetch_url(url: str):
 # Step3: Read documentation and write code accordingly
 
 docs_urls = {
-    "langchain": "python.langchain.com/docs",
+    "langchain": "docs.langchain.com/",
     "llama-index": "docs.llamaindex.ai/en/stable",
-    "openai": "platform.openai.com/docs",
+    "openai": "platform.openai.com/docs", 
     "uv": "docs.astral.sh/uv",
 }
 
